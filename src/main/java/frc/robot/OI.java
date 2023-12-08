@@ -4,8 +4,10 @@ import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.XboxController.Axis;
 import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * This class holds configurations for the Operator Interface (so joysticks/controllers)
@@ -34,6 +36,7 @@ public class OI {
     private static class OperatorButtons {
         /** Button used as example */
         private static final Button EXAMPLE = XboxController.Button.kA;
+        private static final int INTAKE = XboxController.Axis.kRightTrigger.value;
     }
 
     // This contains objects for both joystick and controller driving
@@ -54,7 +57,9 @@ public class OI {
 
     /** Button used as example */
     public static final JoystickButton exampleButton = new JoystickButton(operatorController, OperatorButtons.EXAMPLE.value);
-
+    
+    // 0.2 is a xbox trigger threshold
+    public static final Trigger intakeButton = new Trigger(() -> operatorController.getRawAxis(OperatorButtons.INTAKE) >= 0.2);
 
     // Suppliers for drive inputs
 

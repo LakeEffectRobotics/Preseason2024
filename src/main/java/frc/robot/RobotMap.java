@@ -23,7 +23,7 @@ public class RobotMap {
         /** CAN ID of top talon 1. */
         private static final int TOP_TALON_1 = 6;
         /** CAN ID of top talon 2. */
-        private static final int TOP_TALON_2 = 7;
+        private static final int TOP_TALON_2 = 7; // (intake motor)
         /** CAN ID of top talon 3. */
         private static final int TOP_TALON_3 = 8;
     }

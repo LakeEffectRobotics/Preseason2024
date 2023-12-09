@@ -1,5 +1,9 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
+import edu.wpi.first.math.kinematics.DifferentialDriveWheelSpeeds;
+import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -16,6 +20,14 @@ public class Drivetrain extends SubsystemBase  {
 	 * Motor controllers on right side.
 	 */
 	MotorControllerGroup rightControllers;
+
+	// Robot track width 19"
+	// TODO find actual width of track
+	public final DifferentialDriveKinematics kinematics = new DifferentialDriveKinematics(Units.inchesToMeters(24));
+
+	// Max speed in m/s because idk
+	// TODO change to something else
+	public final double MAX_SPEED = 4;
 
 
 	/**
@@ -38,6 +50,11 @@ public class Drivetrain extends SubsystemBase  {
 		leftControllers.set(-left);
 		rightControllers.set(right);
 	}
+
+	public void arcadeDrive(double speed, double rotation) {
+        DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(new ChassisSpeeds(speed, 0, rotation));
+        setOutput(wheelSpeeds.leftMetersPerSecond / 4.4, wheelSpeeds.rightMetersPerSecond / 4.4);
+    }
 
 	/**
 	 * Stop the drivetrain.

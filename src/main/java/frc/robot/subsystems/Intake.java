@@ -21,9 +21,9 @@ public class Intake extends SubsystemBase {
       intakeController.set(ControlMode.PercentOutput, speed);   
   }
 
-
-  //@Override
-  //public void periodic() {
-  // This method will be called once per scheduler run
-  //}
+  /*
+  @Override
+  public void periodic() {
+   This method will be called once per scheduler run
+  }*/
 }

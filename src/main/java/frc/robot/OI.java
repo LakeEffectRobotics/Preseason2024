@@ -102,4 +102,8 @@ public class OI {
         return raw;
     }
 
+    public static DoubleSupplier intakeSpeedSupplier = () -> {
+        return operatorController.getRawAxis(OperatorButtons.INTAKE);
+    };
+
 }

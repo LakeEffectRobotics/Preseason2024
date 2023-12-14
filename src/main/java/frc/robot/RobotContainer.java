@@ -23,7 +23,7 @@ public class RobotContainer {
 
   /** Instance of the robot's drivetrain */
   private Drivetrain drivetrain = new Drivetrain(RobotMap.leftDriveControllers, RobotMap.rightDriveControllers);
-  private Intake intake = new Intake(RobotMap.topTalon1);
+  private Intake intake = new Intake(RobotMap.topTalon2);
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {

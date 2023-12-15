@@ -9,9 +9,11 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IntakeCommand;
+import frc.robot.commands.OuttakeCommand;
 import frc.robot.commands.instant.ExampleButtonCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Outtake;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -23,6 +25,7 @@ public class RobotContainer {
 
 
   private Intake intake = new Intake(RobotMap.topTalon2); 
+  private Outtake outtake = new Outtake(RobotMap.topTalon1);
   /** Instance of the robot's drivetrain */
   private Drivetrain drivetrain = new Drivetrain(RobotMap.leftDriveControllers, RobotMap.rightDriveControllers);
   
@@ -46,6 +49,7 @@ public class RobotContainer {
     // Make the ExampleButtonCommand run each time the example button is pressed
     OI.exampleButton.onTrue(new ExampleButtonCommand());
     OI.intakeTrigger.whileTrue(new IntakeCommand(intake, OI.intakeTriggerSupplier));
+    OI.outtakeTrigger.whileTrue(new OuttakeCommand(outtake, OI.outtakeTriggerSupplier));
 
     // TODO: Add your button bindings here    
   }

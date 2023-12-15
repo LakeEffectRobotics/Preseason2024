@@ -35,7 +35,7 @@ public class Drivetrain extends SubsystemBase  {
 	 * @param right right side output percet, [-1, 1]
 	 */
 	public void setOutput(double left, double right){
-		leftControllers.set(left);
+		leftControllers.set(-left);
 		rightControllers.set(right);
 	}
 

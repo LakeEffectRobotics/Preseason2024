@@ -5,16 +5,16 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
 
-  WPI_TalonSRX intakeController; 
+  TalonSRX intakeController; 
   
   /** Creates a new Intake. */
-  public Intake(WPI_TalonSRX intakeController) {
+  public Intake(TalonSRX intakeController) {
       this.intakeController = intakeController;
   }
   public void setSpeed(Double speed) {

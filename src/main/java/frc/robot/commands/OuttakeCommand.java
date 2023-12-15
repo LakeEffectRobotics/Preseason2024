@@ -24,7 +24,7 @@ public class OuttakeCommand extends CommandBase {
     
     @Override
     public void execute() {
-        outtake.setSpeed(speed.getAsDouble() / 50);
+        outtake.setSpeed(speed.getAsDouble());
     }
 
     @Override

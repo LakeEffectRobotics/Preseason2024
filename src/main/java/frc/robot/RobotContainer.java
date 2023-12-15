@@ -25,7 +25,7 @@ public class RobotContainer {
 
 
   private Intake intake = new Intake(RobotMap.topTalon2); 
-  private Outtake outtake = new Outtake(RobotMap.topTalon1);
+  private Outtake outtake = new Outtake(RobotMap.topTalon3);
   /** Instance of the robot's drivetrain */
   private Drivetrain drivetrain = new Drivetrain(RobotMap.leftDriveControllers, RobotMap.rightDriveControllers);
   

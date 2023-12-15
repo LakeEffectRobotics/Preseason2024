@@ -111,7 +111,6 @@ public class OI {
     };
 
     public static DoubleSupplier outtakeTriggerSupplier = () -> {
-        System.out.println("test");
         return operatorController.getRawAxis(OperatorButtons.OUTTAKE_TRIGGER);
     };
 }

@@ -18,7 +18,7 @@ public class Intake extends SubsystemBase {
       this.intakeController = intakeController;
   }
   public void setSpeed(Double speed) {
-      intakeController.set(ControlMode.PercentOutput, -speed);   
+      intakeController.set(ControlMode.PercentOutput, speed);   
   }
 
   /*

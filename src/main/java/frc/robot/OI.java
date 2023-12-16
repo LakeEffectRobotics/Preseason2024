@@ -36,8 +36,9 @@ public class OI {
         /** Button used as example */
         private static final Button EXAMPLE = XboxController.Button.kA;
 
-        private static final int INTAKE_TRIGGER = XboxController.Axis.kRightTrigger.value;
-        private static final int OUTTAKE_TRIGGER = XboxController.Axis.kLeftTrigger.value;
+        private static final int INTAKE_IN_TRIGGER = XboxController.Axis.kRightTrigger.value;
+        private static final int INTAKE_OUT_TRIGGER = XboxController.Axis.kLeftTrigger.value;
+        private static final Button OUTTAKE = XboxController.Button.kB;
 
     }
 
@@ -59,10 +60,11 @@ public class OI {
 
     /** Button used as example */
     public static final JoystickButton exampleButton = new JoystickButton(operatorController, OperatorButtons.EXAMPLE.value);
+    public static final JoystickButton outtakeButton = new JoystickButton(operatorController, OperatorButtons.OUTTAKE.value);
 
     // Use 0.2 as a deadzone?
-    public static final Trigger intakeTrigger = new Trigger(() -> operatorController.getRawAxis(OperatorButtons.INTAKE_TRIGGER) >= 0.2);
-    public static final Trigger outtakeTrigger = new Trigger(() -> operatorController.getRawAxis(OperatorButtons.OUTTAKE_TRIGGER) >= 0.2);
+    public static final Trigger intakeInTrigger = new Trigger(() -> operatorController.getRawAxis(OperatorButtons.INTAKE_IN_TRIGGER) >= 0.2);
+    public static final Trigger intakeOutTrigger = new Trigger(() -> operatorController.getRawAxis(OperatorButtons.INTAKE_OUT_TRIGGER) >= 0.2);
 
     // Suppliers for drive inputs
 
@@ -106,12 +108,12 @@ public class OI {
     }
 
 
-    public static DoubleSupplier intakeTriggerSupplier = () -> {
-        return operatorController.getRawAxis(OperatorButtons.INTAKE_TRIGGER);
+    public static DoubleSupplier intakeInTriggerSupplier = () -> {
+        return operatorController.getRawAxis(OperatorButtons.INTAKE_IN_TRIGGER);
     };
 
-    public static DoubleSupplier outtakeTriggerSupplier = () -> {
+    public static DoubleSupplier intakeOutTriggerSupplier = () -> {
         System.out.println("test");
-        return operatorController.getRawAxis(OperatorButtons.OUTTAKE_TRIGGER);
+        return operatorController.getRawAxis(OperatorButtons.INTAKE_OUT_TRIGGER);
     };
 }

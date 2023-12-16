@@ -48,8 +48,9 @@ public class RobotContainer {
   private void configureButtonBindings() {
     // Make the ExampleButtonCommand run each time the example button is pressed
     OI.exampleButton.onTrue(new ExampleButtonCommand());
-    OI.intakeTrigger.whileTrue(new IntakeCommand(intake, OI.intakeTriggerSupplier));
-    OI.outtakeTrigger.whileTrue(new OuttakeCommand(outtake, OI.outtakeTriggerSupplier));
+    OI.intakeInTrigger.whileTrue(new IntakeCommand(intake, OI.intakeInTriggerSupplier));
+    OI.intakeOutTrigger.whileTrue(new IntakeCommand(intake, OI.intakeOutTriggerSupplier));
+    OI.outtakeButton.whileTrue(new OuttakeCommand(outtake, () -> 1.0));
 
     // TODO: Add your button bindings here    
   }
